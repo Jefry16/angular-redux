@@ -40,11 +40,21 @@
               </div>
             </div>
             <div class="form-group">
+              <button type="submit"
+                class="btn btn-primary submit-btn btn-block"
+                [disabled]="form.invalid"
+                *ngIf="!loading"
+              >
+                Login
+              </button>
+
               <button
                 class="btn btn-primary submit-btn btn-block"
                 [disabled]="form.invalid"
+                *ngIf="loading"
               >
-                Login
+                <i class="fa fa-spin fa-sync"></i>
+                Espere...
               </button>
             </div>
 
