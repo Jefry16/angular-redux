@@ -22,7 +22,8 @@ import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { appReducers } from './app.reducer';
-
+import { SortPipe } from './pipes/sort.pipe';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { appReducers } from './app.reducer';
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
+    SortPipe,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,7 @@ import { appReducers } from './app.reducer';
     AngularFirestoreModule,
     AngularFireAuthModule,
     StoreModule.forRoot(appReducers),
+    NgChartsModule,
 
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
